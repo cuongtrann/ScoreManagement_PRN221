@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ScoreManagementSystem</title>
+	<link href="~/css/site.css" rel="stylesheet" />
+	<link href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css" rel="stylesheet">
+
+	<style>
+		.dropdown {
+			position: relative;
+			display: inline-block;
+		}
+
+		.dropdown-menu {
+			display: none;
+			position: absolute;
+			top: 100%;
+			right: 0;
+			min-width: 120px;
+			padding: 0.5rem;
+			background-color: #fff;
+			border-radius: 0.25rem;
+			box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+			z-index: 10;
+		}
+
+		.dropdown:hover .dropdown-menu,
+		.dropdown:focus-within .dropdown-menu {
+			display: block;
+		}
+
+		.dropdown-menu a {
+			display: block;
+			padding: 0.25rem 0.5rem;
+			color: #374151;
+			font-size: 0.875rem;
+			text-decoration: none;
+			transition: background-color 0.2s ease-in-out;
+		}
+
+		.dropdown-menu a:hover,
+		.dropdown-menu a:focus {
+			background-color: #f3f4f6;
+		}
+
+		.min-h-screen {
+			min-height: 100vh;
+		}
+
+		.grid {
+			display: grid;
+		}
+
+		.grid-cols-1 {
+			grid-template-columns: repeat(1, minmax(0, 1fr));
+		}
+
+	</style>
+</head>
+<body>
+    <header>
+		<nav class="bg-gray-800 shadow-lg">
+			<div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+				<div class="relative flex items-center justify-between h-16">
+					<div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+						<div class="flex-shrink-0">
+							<img href="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/FPT_Education_logo.svg/2560px-FPT_Education_logo.svg.png" /><h1 class="text-white font-bold text-xl">FPT University Academic Portal</h1>
+						</div>
+					</div>
+					<div class="flex items-center">
+						<div class="dropdown">
+							<span class="text-gray-400 mr-4 cursor-pointer">Tên tài khoản sinh viên</span>
+							<div class="dropdown-menu">
+								<a href="#" class="block text-gray-700 hover:bg-gray-100 px-4 py-2">
+									Xem thông tin sinh
+									viên
+								</a>
+								<a href="#" class="block text-gray-700 hover:bg-gray-100 px-4 py-2">Đăng xuất</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+    </header>
+	<div class="container p-4 mx-auto flex space-x-4 w-4/5">
+            @RenderBody()
+    </div>
+
+	<footer class="bg-gray-900 text-white text-center py-4">
+		<p>Mọi góp ý, thắc mắc xin liên hệ: Phòng dịch vụ sinh viên: Email: dichvusinhvien@fe.edu.vn. Điện thoại: (024)7308.13.13</p>
+		<p>© Powered by FPT University |  CMS |  library |  books24x7</p>
+	</footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
